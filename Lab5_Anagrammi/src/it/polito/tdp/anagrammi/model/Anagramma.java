@@ -5,9 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import it.polito.tdp.anagrammi.DAO.AnagrammaDAO;
+
 public class Anagramma {
 	
 	private Set<String> risultato;
+	
+	private AnagrammaDAO anagrammaDao = new AnagrammaDAO();
 
 	
 	/**
@@ -79,6 +83,17 @@ public class Anagramma {
 		
 		return risultato;
 		
+		
+	}
+
+
+
+	public boolean isCorrect(String anagramma){
+		
+		if(anagrammaDao.isCorrect(anagramma))
+			return true;
+		else
+			return false;
 		
 	}
 	
